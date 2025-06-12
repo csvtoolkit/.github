@@ -90,4 +90,17 @@ We welcome contributions to any of our projects! Each repository has its own con
 
 All projects under the CSVToolkit organization are released under the MIT License. 
 
-<iframe src="https://github.com/sponsors/achrafAa/card" title="Sponsor achrafAa" height="225" width="600" style="border: 0;"></iframe>
+## Support the Project
+
+If you find CSVToolkit useful for your projects, please consider sponsoring the development! Your support helps maintain and improve these high-performance CSV tools while reducing development and infrastructure costs.
+
+[![Sponsor](https://img.shields.io/badge/sponsor-❤️-ff69b4?style=for-the-badge&logo=github-sponsors)](https://github.com/sponsors/achrafAa)
+
+**Why sponsor?**
+- 🚀 Accelerate development of new features
+- 🐛 Faster bug fixes and improvements  
+- 📚 Better documentation and examples
+- 🎯 Priority support for feature requests
+- 💡 Fund research into even faster CSV processing techniques
+- 💰 **Lower development costs** - Reduce your team's time spent on CSV processing optimization
+- 🏗️ **Reduce infrastructure costs** - More efficient processing means lower server resources needed
