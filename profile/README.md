@@ -33,7 +33,7 @@ A modern PHP library that provides a unified interface for CSV processing, autom
 - **Memory Efficient**: Constant memory usage with streaming for datasets of any size
 - Automatic implementation selection
 - Consistent API across implementations
-- Type-safe with full PHP 8.1+ features
+- Type-safe with full PHP 8.2+ features
 - MIT License
 
 ### [Benchmarking PHP FastCSV](https://github.com/csvtoolkit/benchmarking-php-fastcsv)
@@ -62,25 +62,6 @@ graph TD
 - **Flexible**: Custom delimiters, enclosures, and escape characters
 - **Reliable**: Comprehensive test coverage
 - **Open Source**: All components under MIT license
-
-## Getting Started
-
-1. For maximum performance:
-   ```bash
-   # Install the extension
-   git clone --recursive https://github.com/csvtoolkit/FastCSV-ext
-   cd FastCSV-ext
-   phpize
-   ./configure
-   make
-   make install
-   ```
-
-2. For a unified API with automatic fallback:
-   ```bash
-   # Install via Composer
-   composer require csvtoolkit/csv-helper
-   ```
 
 ## Contributing
 
