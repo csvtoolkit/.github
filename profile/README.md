@@ -10,9 +10,10 @@
 
 ### [FastCSV-ext](https://github.com/csvtoolkit/FastCSV-ext)
 A high-performance PHP extension for CSV file handling, providing significant improvements in speed and memory efficiency compared to PHP's native CSV functions.
-- **4-7x faster** than native PHP CSV functions (validated by benchmarks)
-- **Read Performance**: Up to 383K records/sec vs 82K records/sec (SplFileObject)
-- **Write Performance**: Up to 692K records/sec vs 109K records/sec (SplFileObject)
+- **3.6x to 4.8x faster** than native PHP CSV functions for read operations (validated by benchmarks)
+- **1.6x to 2.9x faster** for combined read/write operations
+- **Read Performance**: Up to 568K records/sec vs 156K records/sec (SplFileObject)
+- **Write Performance**: Up to 339K records/sec vs 136K records/sec (SplFileObject)
 - Built on top of FastCSV-C library
 - Supports PHP 8.2, 8.3, and 8.4
 - Cross-platform (Linux, macOS, Windows)
@@ -28,7 +29,7 @@ A standalone, high-performance C library for CSV processing with minimal memory 
 
 ### [PHP-CSVHelper](https://github.com/csvtoolkit/PHP-CSVHelper)
 A modern PHP library that provides a unified interface for CSV processing, automatically using FastCSV when available.
-- **Intelligent Performance**: Automatically uses FastCSV (4-7x faster) when available
+- **Intelligent Performance**: Automatically uses FastCSV (3.6x-4.8x faster) when available
 - **Reliable Fallback**: Falls back to optimized SplFileObject implementation
 - **Memory Efficient**: Constant memory usage with streaming for datasets of any size
 - Automatic implementation selection
@@ -41,7 +42,7 @@ A comprehensive benchmarking suite for comparing FastCSV extension performance a
 - Docker-based environment for consistent testing
 - Multiple data sizes (1K, 100K, 1M records)
 - Automated performance measurement and reporting
-- Validates the 4-7x performance improvement claims
+- Validates the 3.6x-4.8x performance improvement claims
 - MIT License
 
 ## Architecture
