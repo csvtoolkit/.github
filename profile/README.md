@@ -1,86 +1,89 @@
-# Achraf AAMRI | Senior Software Engineer 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/achrafaamri)
+# CSVToolkit Organization
 
-👋 **Senior Software Engineer** passionate about low-level programming and performance optimization. I build PHP extensions, explore PHP internals, and dive deep into systems programming with C, Rust, and Zig. Creator of CSVToolkit - high-performance CSV processing tools achieving 3.6x-4.8x speed improvements ⚡
+<div align="center">
+  <h3>🚀 High-Performance CSV Processing Tools</h3>
+  <p><a href="https://csvtoolkit.org">🌐 Visit our website</a></p>
+</div>
 
----
+> ⚠️ **Experimental Status**: These projects are currently in experimental phase. While they work correctly and pass all tests, please use with caution in production environments. We recommend thorough testing in your specific use case before deployment.
 
-## 🎯 **Quick Stats**
-⚡ **CSVToolkit Creator** - High-performance CSV processing tools achieving 3.6x-4.8x speed improvements  
-🚀 **Laravel Core Contributor** - Merged bugfix improving framework reliability  
-🌟 **Open Source Maintainer** - 10 active projects with 20+ stars combined  
-🐘 **PHP Internals Explorer** - Deep diving into Zend engine and preparing core contributions  
-🔧 **Low-Level Programming** - Building PHP extensions with C, Rust, and Zig  
-📦 **Docker Expert** - Created development environments used by PHP community  
+## Our Projects
 
----
+### [FastCSV-ext](https://github.com/csvtoolkit/FastCSV-ext)
+A high-performance PHP extension for CSV file handling, providing significant improvements in speed and memory efficiency compared to PHP's native CSV functions.
+- **3.6x to 4.8x faster** than native PHP CSV functions for read operations (validated by benchmarks)
+- **1.6x to 2.9x faster** for combined read/write operations
+- **Read Performance**: Up to 568K records/sec vs 156K records/sec (SplFileObject)
+- **Write Performance**: Up to 339K records/sec vs 136K records/sec (SplFileObject)
+- Built on top of FastCSV-C library
+- Supports PHP 8.2, 8.3, and 8.4
+- Cross-platform (Linux, macOS, Windows)
+- MIT License
 
-## 💼 **What I Do**
-**Senior Systems Engineer & PHP Internals Developer** specializing in **Performance Optimization, PHP Extensions & Low-Level Programming**
+### [FastCSV-C](https://github.com/csvtoolkit/FastCSV-C)
+A standalone, high-performance C library for CSV processing with minimal memory footprint.
+- Zero dependencies
+- Thread-safe design
+- Cross-platform compatibility
+- Powers the FastCSV PHP extension
+- MIT License
 
-🔧 **PHP Extension Development** - Building high-performance extensions that bridge PHP with systems programming  
-⚡ **Performance Engineering** - Optimizing at the language and system level for maximum efficiency  
-🐘 **PHP Internals Research** - Studying the Zend engine architecture and preparing for core contributions  
-🦀 **Systems Programming** - Leveraging C, Rust, and Zig for performance-critical components  
-🏗️ **Backend Architecture** - Designing scalable systems with deep understanding of underlying performance  
-📊 **CSV Processing Innovation** - Creating high-performance CSV tools that outperform native implementations by 3.6x-4.8x
+### [PHP-CSVHelper](https://github.com/csvtoolkit/PHP-CSVHelper)
+A modern PHP library that provides a unified interface for CSV processing, automatically using FastCSV when available.
+- **Intelligent Performance**: Automatically uses FastCSV (3.6x-4.8x faster) when available
+- **Reliable Fallback**: Falls back to optimized SplFileObject implementation
+- **Memory Efficient**: Constant memory usage with streaming for datasets of any size
+- Automatic implementation selection
+- Consistent API across implementations
+- Type-safe with full PHP 8.2+ features
+- MIT License
 
----
+### [Benchmarking PHP FastCSV](https://github.com/csvtoolkit/benchmarking-php-fastcsv)
+A comprehensive benchmarking suite for comparing FastCSV extension performance against native SplFileObject implementation.
+- Docker-based environment for consistent testing
+- Multiple data sizes (1K, 100K, 1M records)
+- Automated performance measurement and reporting
+- Validates the 3.6x-4.8x performance improvement claims
+- MIT License
 
-## 🛠️ **Tech Arsenal**
+## Architecture
 
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white) ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) ![Zig](https://img.shields.io/badge/Zig-F7A41D?style=flat-square&logo=zig&logoColor=white) ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white) ![Golang](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white) ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white) ![Symfony](https://img.shields.io/badge/Symfony-000000?style=flat-square&logo=symfony&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+```mermaid
+graph TD
+    A[PHP-CSVHelper] -->|Uses when available| B[FastCSV-ext]
+    A -->|Fallback| C[PHP SplFileObject]
+    B -->|Built on| D[FastCSV-C]
+```
 
----
+## Features
 
-## 🌟 **Key Projects**
+- **High Performance**: Optimized C implementation for maximum speed
+- **Memory Efficient**: Minimal memory footprint for large files
+- **Cross Platform**: Works on Linux, macOS, and Windows
+- **Modern PHP**: Full PHP 8.x support with type safety
+- **Flexible**: Custom delimiters, enclosures, and escape characters
+- **Reliable**: Comprehensive test coverage
+- **Open Source**: All components under MIT license
 
-### **🚀 CSVToolkit Organization** - [csvtoolkit.org](https://csvtoolkit.org)
-**High-Performance CSV Processing Tools**
+## Contributing
 
-- 🐘 **[FastCSV-ext](https://github.com/csvtoolkit/FastCSV-ext)** - PHP extension achieving **3.6x-4.8x faster** performance than native functions
-- 🔧 **[FastCSV-C](https://github.com/csvtoolkit/FastCSV-C)** - Zero-dependency C library powering the PHP extension
-- 📊 **[PHP-CSVHelper](https://github.com/csvtoolkit/PHP-CSVHelper)** - Intelligent PHP library with automatic performance optimization
+We welcome contributions to any of our projects! Each repository has its own contribution guidelines and development setup instructions.
 
+## License
 
-### **Core Contributions**
-- 🚀 **[Laravel Framework](https://github.com/laravel/framework)** - Core framework contributor
-  - [[12.x] ScheduledTaskFailed not dispatched on scheduled forground task fails](https://github.com/laravel/framework/pull/55624)
-  - [Fix SSL Certificate and Connection Errors Leaking as Guzzle Exceptions](https://github.com/laravel/framework/pull/55937)
-  - [Fix #55989 TooManyRedirectsException handling in HTTP client](https://github.com/laravel/framework/pull/55998)
-- 🐘 **[PHP Dev Box](https://github.com/achrafAa/php-dev-box)** - Containerized PHP development environment
-- 🎓 **[Cventure](https://github.com/achrafAa/cventure)** - Interactive C programming learning platform
-- 🍎 **[MacDotfile](https://github.com/achrafAa/MacDotfile)** - Automated macOS developer environment setup
+All projects under the CSVToolkit organization are released under the MIT License. 
 
----
+## Support the Project
 
-## 🚀 **Professional Highlights**
-- ⚡ **Performance Engineering** - Reduced API response times by **40%** through strategic optimization
-- 🏗️ **Microservices Migration** - Achieved **300% scalability improvement** through system decomposition
-- ☁️ **Cloud Architecture** - Led AWS migration reducing infrastructure costs while improving reliability
-- 🔧 **Developer Experience** - Created development tools used across multiple teams
+If you find CSVToolkit useful for your projects, please consider sponsoring the development! Your support helps maintain and improve these high-performance CSV tools while reducing development and infrastructure costs.
 
----
+[![Sponsor](https://img.shields.io/badge/sponsor-❤️-ff69b4?style=for-the-badge&logo=github-sponsors)](https://github.com/sponsors/achrafAa)
 
-## 🏍️ **Beyond the Code**
-When I'm not architecting systems or optimizing databases:
-- **🏍️ Motorcycle Adventures** - Exploring roads less traveled (and debugging issues less documented)
-- **🔍 Tech Explorer** - Always experimenting with the latest tools and frameworks
-- **☕ Coffee Connoisseur** - Firm believer that good code requires great coffee
-
----
-
-## 📈 **Current Focus**
-- ⚡ **Low-Level Programming** - C, Zig, and Rust for performance-critical components
-- 🔧 **PHP Extensions** - Building high-performance extensions and packages
-- 🐘 **PHP Internals** - Contributing to PHP core and understanding the Zend engine
-- 📊 **CSVToolkit Development** - Expanding high-performance CSV processing capabilities
-
----
-
-## 📬 **Let's Connect**
-Always open to discussing exciting projects, architecture challenges, or just geeking out about tech!
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/achrafaamri) [![X (Twitter)](https://img.shields.io/badge/X_(Twitter)-Follow-black?style=flat-square&logo=x)](https://x.com/aamri_achraf)
-
-> *"Code is like humor. When you have to explain it, it's bad."* - Cory House
+**Why sponsor?**
+- 🚀 Accelerate development of new features
+- 🐛 Faster bug fixes and improvements  
+- 📚 Better documentation and examples
+- 🎯 Priority support for feature requests
+- 💡 Fund research into even faster CSV processing techniques
+- 💰 **Lower development costs** - Reduce your team's time spent on CSV processing optimization
+- 🏗️ **Reduce infrastructure costs** - More efficient processing means lower server resources needed
